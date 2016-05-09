@@ -1,0 +1,1 @@
+Wscript.Sleep 10000
