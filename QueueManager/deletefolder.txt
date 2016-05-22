@@ -1,1 +1,0 @@
-for /f "delims=" %%F in ('dir /b /s "arghya2" /ad /s') do rmdir /s /q "%%F"
