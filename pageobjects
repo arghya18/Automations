@@ -1,0 +1,16 @@
+    @FindBy(xpath = ".//*[@id='disp-navigation']/descendant::a[contains(@title,'Create Private/Public List/Entries')]")
+    WebElement addListEnrtyLink;
+    @FindBy(xpath = ".//*[@id='disp-navigation']/descendant::a[contains(@title,'Search List And Entry')]")
+    WebElement editDeleteListEntryLink;
+    @FindBy(xpath = ".//*[@id='disp-navigation']/descendant::a[@title='Log-Off']")
+    WebElement logOffLink;
+
+    @FindBy(xpath = ".//*[text()='Task List - Private']/following-sibling::div//*[@id='gs_caseRef']")
+    WebElement caseRefSearchPrivate;
+    @FindBy(xpath = ".//*[text()='Task List - Private']/following-sibling::div//a[@href='#']")
+    WebElement runButtonPrivate;
+
+    @FindBy(xpath=".//div[@data-type='ButtonGroup']/descendant::button/span[text()='Refresh']/parent::button")
+    WebElement refreshButton;
+    
+    
