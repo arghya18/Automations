@@ -1,0 +1,84 @@
+Automation and Innovation Details
+1.	TCV Test Data Setup Tool
+
+Technology/Tools: MS Visual Studio 10, VB.NET
+Description:  Developed a very useful windows application tool to ease the process of data support to E2E testing team, the tool removes the manual effort of verification and correction of attached template, finding issues, drafting emails regarding issues found or details of setup done and keeping detailed records of request fulfilled. The tool does all the activities only with some clicks. Even the requestor can install the application and verify the filled template and rectify the errors before uploading to the request portal, this helps in reducing turn-around time.
+Benefits:
+•	The tool has proved to be very useful and time saving utility.
+•	It has accelerated the data setup process and reduced turn-around time for every data setup request.
+•	It has removed the chance of human error since verification process has been automated.
+
+
+2.	Self-Served Smart Solution Portal
+Technology/Tools: HTML, CSS, AJAX, PERL and Green Hat Tester, Apache httpd server
+Description:  Developed a self-served web portal to facilitate the user to create/update data instantly by uploading template in the portal. This process replaces the previous way of raising the request on request portal and wait for 1-2 days to get processed.
+   	Benefits:
+•	The portal has saved valuable time of data support team as the on demand requests are fulfilled automatically.
+•	The portal has proved to be a great relief for the E2E team by accelerating test execution as the team needs not to wait for days for completion of data request.
+•	It has played very important role in go-live success of few projects.
+•	This has saved team members from serving UK hours and weekend support.
+
+3.	PDF Comparator on Demand
+Technology/Tools:  C++, QT, Poppler and VB Script
+Description: Modified the source code of DiffPDF and converted the UI based application to a command line application which takes the input and output PDF locations as arguments and generate the output PDF and a text file which says whether any difference is found or not.
+Since all tasks are performed with a single command, it was very easy to configure it on ‘On-Demand’ framework. Also the total execution time reduced up to a long extent.
+Benefits:
+•	The solution is available as paid software over internet, so it has saved money for the bank.
+•	The DiffPDF has been implemented as E2E solution and served requirement of multiple projects.
+•	It simplifies the process and could be used by anyone without having any technical knowledge.
+•	Later, it has been used to serve Web-based solution for PDF comparison. 
+
+
+4.	PFD Validator
+Technology/Tools:  Java
+Description: Have created a framework to automate the PDF validation. The solution takes the user input details like File Path, Page No, Element Position, Element Size and Line No and validate the below various details(Line Count, Text Size, Text Font, Text Font Colour, Text Content) and update the Overall Status  for the test case, if validation fails it stores issue log against the case.
+Benefits:
+•	The solution helps to programmatically validate the requirement with actual PDF with no time.
+•	The PDF validation is very much complex and the solution does it with a single click.
+
+5.	Generic Login OTP Portal
+Technology/Tools:  Perl, HTML, CSS, AJAX and Apache httpd server
+Description: Have developed Generic web-based common login portal through which the user can navigate to chosen portal. The portal is to authenticate the user by send one time password to the entered email id.
+Benefits:
+•	This portal authenticates the user and avoids misuse of other secured portals like Self-Served Smart Solution Portal and VDG portal.
+•	The portal keep tracks of logged in user, so any changes made through portal can be tracked and identified.
+
+
+6.	Virtual Distribution Group Portal
+Technology/Tools:  Perl, HTML, CSS, AJAX and Apache httpd Server
+Description: Have created a portal to perform varies operations on web-based portal for VDG (Virtual Distribution Groups) used for Inform On Demand service. The user can create/modify and delete VDGs and can add/edit/delete its subscribers and publishers which were previously implemented through email keywords.
+Benefits:
+•	The portal facilitates the user to avail the functionalities through easy to use UI.
+•	The operation takes lesser time to perform functionalities over previous solution. 
+
+
+7.	Queue Manager for On-Demand Framework
+Technology/Tools:  VB Script
+Description: Have written a generic Queue Manger for the existing On-Demand framework and designed a Queue Manager Monitoring portal for the same. Queue Manger can be used for any exiting/new utility with an entry on DB. It works on process id generated for each process.
+Benefits:
+•	The Queue Manager uses MS Access DB as Backend which is faster and reliable than Text file.
+•	It is capable of handling machine restart/BTS service restart. It will be automatically triggered; new request is not required to trigger it.
+•	Adding a new utility to queue manager requires minimal effort.
+
+
+8.	Jenkins Integration with On-Demand Framework
+Technology/Tools:  Jenkins, VB Script and Apache Tomcat Server
+Description: Have integrated Jenkins with On-Demand Framework using Jenkins CLI, this integration facilitates us to provide E2E on demand support for any utility (e.g. Selenium Script) implemented through Jenkins. The end user is just send an email in prescribed format to trigger the utility and it will trigger Jenkins Job and once complete it will send out the output/report.  
+Benefits:
+•	The solution can be used by end user just by send an email without knowing any technical details of Jenkins Job.
+•	The user can track the progress, check error and see report on the direct link shared by this solution on receipt of the request.
+
+9.	Full E2E UI automation with Reporting using Selenium, Cucumber, Test NG, Jenkins, GIT and On-Demand Framework
+Technology/Tools:  Jenkins, Selenium, Cucumber, JUnit, TestNG and VB Script
+Description: Have implemented Web automation (using Selenium) on Demand where the end user can trigger the specific features and scenarios of automation pack.
+Below is the Process:
+1.	End user sends an email to specific email id with specified subject line and excel template as attachment
+2.	The attachment will be saved and automation pack will be triggered as per excel received over email.
+3.	On completion of execution the requester receives the report (created from Cucumber JVM reports, HTML Reports, ExtendNGReport) for the run with screenshots. 
+
+Queue has also been implemented for the same, so that multiple users can trigger the pack in same time but the execution will occur in FIFO fashion.
+Benefits:
+•	Anyone can run any specific scenario of web automation implemented using Selenium with TestNG, Junit and Cucumber.
+•	The service is available 24x7 for all users.
+•	It removes any dependency of automation tester to run specific scenario.
+•	This can be used to do Smoke, Sanity and Regression testing by selection set of scenarios in the template.
