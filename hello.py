@@ -9,3 +9,6 @@ spark.sparkContext.setLogLevel("ERROR")
 
 df = spark.range(10)
 df.show()
+
+path = 's3://stx-usw2-ehc-prd-staging-2/spark-k8s'
+df.write.format('orc').mode('append').save(path)
