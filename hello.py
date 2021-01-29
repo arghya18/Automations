@@ -16,3 +16,4 @@ df.write.format('orc').mode('append').save(path)
 
 df2 = spark.sql('select * from dim.date_dim limit 100')
 df2.show()
+df2.write.format('orc').mode('append').save(path)
