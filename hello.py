@@ -14,6 +14,6 @@ df.show()
 path = 's3a://stx-usw2-ehc-prd-staging-2/spark-k8s'
 df.write.format('orc').mode('append').save(path)
 
-df2 = spark.sql('select * from dim.date_dim limit 100')
+df2 = spark.sql('select * from tmp.test_date_dim limit 100')
 df2.show()
 df2.write.format('orc').mode('append').save(path)
