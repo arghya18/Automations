@@ -7,5 +7,5 @@ spark = SparkSession.builder.appName("bad_files")\
     .getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
-df = spark.sparkContext.parallelize([1, 2, 3])
+df = spark.range(10)
 df.show()
