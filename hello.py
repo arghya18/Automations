@@ -7,7 +7,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .config("spark.hadoop.orc.overwrite.output.file", "true")\
     .enableHiveSupport()\
     .getOrCreate()
-spark.sparkContext.setLogLevel("INFO")
+spark.sparkContext.setLogLevel("ERROR")
 
 path = 's3a://stx-usw2-ehc-prd-staging-2/spark-k8s-data'
 
