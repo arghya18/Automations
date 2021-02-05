@@ -1,4 +1,5 @@
 import time
+import pymysql
 from pyspark.sql import SparkSession
 
 warehouse_location = "abspath('/tmp/warehouse/test/')"
