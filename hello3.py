@@ -15,7 +15,7 @@ df = spark.range(10)
 df.show()
 
 df2 = spark.read.format('orc').option('compression': 'zlib').load('s3://stx-usw2-ehc-prd-data-t2/dim.db_date_dim/atlas_insert_ver=2102050716')
-df.write.format('orc').mode('append').save(path)
+df2.show()
 
 
 print('Sleeping for debug')
