@@ -10,6 +10,10 @@ spark = SparkSession.builder.appName("bad_files")\
     .getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
+print(sys.argv[1])
+args = json.loads(sys.argv[1])
+print(args)
+
 path = 's3a://stx-usw2-ehc-prd-staging-2/spark-k8s-data'
 
 df = spark.range(10)
