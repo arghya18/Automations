@@ -1,6 +1,7 @@
 import time
 import pymysql
 from pyspark.sql import SparkSession
+import sys
 
 warehouse_location = "abspath('/tmp/warehouse/test/')"
 spark = SparkSession.builder.appName("bad_files")\
