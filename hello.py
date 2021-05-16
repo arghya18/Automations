@@ -21,8 +21,8 @@ path = 's3a://stx-usw2-ehc-prd-staging-2/spark-k8s-data'
 df = spark.range(10)
 df.show()
 
-df2 = spark.sql('select count(*) from dim.date_dim limit 100')
-df2.show()
+#df2 = spark.sql('select count(*) from dim.date_dim limit 100')
+#df2.show()
 #df2.write.format('orc').mode('append').save(path)
 
 print('Sleeping for debug')
