@@ -23,9 +23,9 @@ df.show()
 
 df2 = spark.sql('select count(*) from dim.date_dim limit 100')
 df2.show()
-df2.write.format('orc').mode('append').save(path)
+#df2.write.format('orc').mode('append').save(path)
 
 print('Sleeping for debug')
-time.sleep(3)
+#time.sleep(3)
 
-df.write.format('orc').mode('append').save(path)
+#df.write.format('orc').mode('append').save(path)
