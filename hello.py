@@ -29,3 +29,4 @@ print('Sleeping for debug')
 #time.sleep(3)
 
 #df.write.format('orc').mode('append').save(path)
+spark.stop()
