@@ -10,7 +10,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .config("spark.hadoop.orc.overwrite.output.file", "true")\
     .enableHiveSupport()\
     .getOrCreate()
-# spark.sparkContext.setLogLevel("ERROR")
+spark.sparkContext.setLogLevel("DEBUG")
 
 print(sys.argv[1])
 args = json.loads(sys.argv[1])
