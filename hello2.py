@@ -9,7 +9,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
-path = 's3a://stx-usw2-ehc-prd-staging-2/spark-k8s-data'
+path = 's3://stx-usw2-ehc-prd-staging-2/spark-k8s-data'
 
 df = spark.range(10)
 df.show()
