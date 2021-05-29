@@ -15,6 +15,9 @@ df = spark.range(10)
 df.show()
 
 print('Sleeping for debug')
-time.sleep(300)
+time.sleep(3)
 
-df.write.format('orc').mode('append').save(path)
+#df2 = spark.read.format("orc").option("compression", "zlib").load("s3://stx-usw2-ehc-prd-data-t2/test.db_p135_final_contact_fact/event_date_key=20210510")
+df2 = spark.sql('select * from drive.p135_final_contact_fact where event_date_key in (20210510, 20210511, 20210513)')
+df2.write.partitionBy("event_date_key", "atlas_insert_ver").format("orc").option("compression", "zlib").mode('append').save(path)
+spark.stop()
