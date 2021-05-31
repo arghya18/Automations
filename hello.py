@@ -10,7 +10,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .config("spark.hadoop.orc.overwrite.output.file", "true")\
     .enableHiveSupport()\
     .getOrCreate()
-spark.sparkContext.setLogLevel("DEBUG")
+spark.sparkContext.setLogLevel("INFO")
 
 print(sys.argv[1])
 args = json.loads(sys.argv[1])
@@ -26,7 +26,7 @@ df2.show()
 df2.write.format('orc').mode('append').save(path)
 
 print('Sleeping for debug')
-time.sleep(300)
+time.sleep(3)
 
 df.write.format('orc').mode('append').save(path)
 spark.stop()
