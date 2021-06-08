@@ -22,5 +22,7 @@ union_partitions = def_backfill.select(f.col("date_key")).distinct().rdd.flatMap
 print(union_partitions)
 """
 # df = spark.read.orc("s3://stx-usw2-ehc-prd-data-t2/dim_flat.db_drive_event_attr_flat/date_key=20201204/insert_version=2012210729/part-00001-5e22a873-82a5-4781-9eb9-473b483396bd.c000.zlib.orc")
-df = spark.sql("select count(*) from dim_flat.drive_event_attr_flat where date_key=20201204 and insert_version=2012210729")
-print(df.count())
+df = spark.sql("select* from dim_flat.drive_event_attr_flat where date_key=20201204 and insert_version=2012210729")
+df.cache()
+
+spark.stop()
