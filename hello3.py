@@ -10,7 +10,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
-
+"""
 dad_df = spark.sql("select serial_num, event_date, trans_seq from dim.drive_attr_dim dad where dad.hadoop_etl_load_date > '2021-06-07 01:45:40' and dad.hadoop_etl_load_date <= '2021-06-08 07:12:35' and dad.event_date_key in (20210604, 20210527, 20210508, 20210607, 20210603, 20210608, 20201110, 20210606, 20210605)")
 dad_df.createOrReplaceTempView("drive_attr_delta")
 
@@ -23,8 +23,7 @@ print(union_partitions)
 
 """
 # df = spark.read.orc("s3://stx-usw2-ehc-prd-data-t2/dim_flat.db_drive_event_attr_flat/date_key=20201204/insert_version=2012210729/part-00001-5e22a873-82a5-4781-9eb9-473b483396bd.c000.zlib.orc")
-df = spark.sql("select* from dim_flat.drive_event_attr_flat where date_key=20201204 and insert_version=2012210729")
-df.cache()
-"""
+df = spark.sql("select * from dim_flat.drive_event_attr_flat where date_key=20201204 and insert_version=2012210729")
+df.write.format("orc").option("compression", "zlib").mode("Append").save("s3a://stx-usw2-ehc-prd-staging-2/spark-k8s-test")
 
 spark.stop()
