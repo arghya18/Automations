@@ -20,11 +20,11 @@ def_backfill.explain()
 
 union_partitions = def_backfill.select(f.col("date_key")).distinct().rdd.flatMap(lambda x: x).collect()
 print(union_partitions)
-
+and date_key is not null and insert_version is not null
 """
 df = spark.read.format("orc").option("compression", "zlib").load("s3://stx-usw2-ehc-prd-data-t2/dim_flat.db_drive_event_attr_flat/date_key=20201204/insert_version=2012210729/part-00001-5e22a873-82a5-4781-9eb9-473b483396bd.c000.zlib.orc")
 df.createOrReplaceTempView("drive_event_attr_flat")
-df2 = spark.sql("select * from drive_event_attr_flat where date_key=20201204 and insert_version=2012210729 where event_date is not null and drive_serial_num is not null and date_key is not null and insert_version is not null")
+df2 = spark.sql("select * from drive_event_attr_flat where date_key=20201204 and insert_version=2012210729 where event_date is not null and drive_serial_num is not null")
 df2.write.format("orc").option("compression", "zlib").mode("Append").save("s3a://stx-usw2-ehc-prd-staging-2/spark-k8s-test2")
 
 spark.stop()
