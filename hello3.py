@@ -8,7 +8,7 @@ spark = SparkSession.builder.appName("bad_files")\
     .config("spark.hadoop.orc.overwrite.output.file", "true")\
     .enableHiveSupport()\
     .getOrCreate()
-spark.sparkContext.setLogLevel("ERROR")
+spark.sparkContext.setLogLevel("DEBUG")
 
 """
 dad_df = spark.sql("select serial_num, event_date, trans_seq from dim.drive_attr_dim dad where dad.hadoop_etl_load_date > '2021-06-07 01:45:40' and dad.hadoop_etl_load_date <= '2021-06-08 07:12:35' and dad.event_date_key in (20210604, 20210527, 20210508, 20210607, 20210603, 20210608, 20201110, 20210606, 20210605)")
