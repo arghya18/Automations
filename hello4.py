@@ -19,7 +19,7 @@ print(args)
 df = spark.range(10)
 df.show()
 
-df2 = spark.sql('show create table lyve_lab.date_dim')
+df2 = spark.sql('describe lyve_lab.date_dim')
 df2.show()
 print('Sleeping for debug')
 time.sleep(300)
