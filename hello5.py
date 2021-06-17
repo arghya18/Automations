@@ -13,7 +13,7 @@ spark = SparkSession.builder.appName("bad_files")\
 spark.sparkContext.setLogLevel("INFO")
 
 add_part_sql="""
-alter table hga_flat.he_flat add 
+alter table lyve_lab.he_flat add 
 partition(date_key=20190531, atlas_insert_ver=1911251059) location 's3a://stx-lcva03-ehc-prd-data-v11/hga_flat.db_he_flat/date_key=20190531/atlas_insert_ver=1911251059'
 partition(date_key=20190530, atlas_insert_ver=1911271124) location 's3a://stx-lcva03-ehc-prd-data-v11/hga_flat.db_he_flat/date_key=20190530/atlas_insert_ver=1911271124'
 partition(date_key=20190529, atlas_insert_ver=1911251059) location 's3a://stx-lcva03-ehc-prd-data-v11/hga_flat.db_he_flat/date_key=20190529/atlas_insert_ver=1911251059'
