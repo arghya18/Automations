@@ -26,7 +26,7 @@ df2.show()
 df2.write.format('orc').mode('append').save(path)
 
 print('Sleeping for debug')
-time.sleep(300)
+time.sleep(3000)
 
 df.write.format('orc').mode('append').save(path)
 spark.stop()
